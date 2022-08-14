@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Educapedia |Review</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <link rel="icon" type="image/x-icon" href="educapediahor.JPEG">
+<style>
+    .text{
+        color:rgb(245, 238, 238);
+        height: 100px;
+         background-color: rgb(21, 21, 100);
+         background-image: linear-gradient(180deg, rgb(26, 255, 0),rgb(243, 243, 72)w);
+    }
+	.container{
+           background-image: linear-gradient(180deg, rgb(0, 208, 255),rgb(27, 200, 231)w);    }
+</style>
+
+
+</head>
+
+	
+<body>
+<h1 class="text" style="font-size: 55px;" align="center" >Feedback Form!!</h1>
+
+	<div class="container"><br>
+		
+		<div class="col-lg-6 m-auto d-block">
+			
+			<form action="Feed_successful.html" onsubmit="return validation()" class="bg-light">
+				
+				<div class="form-group">
+					<label for="user" class="font-weight-bold"> Name: </label>
+					<input type="text" name="user" class="form-control" id="user" autocomplete="off">
+					<span id="username" class="text-danger font-weight-bold"> </span>
+				</div>
+                
+				<div class="form-group">
+					<label class="font-weight-bold"> Email: </label>
+					<input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+					<span id="emailids" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold">How useful were the educapedia courses for you and suggestions to add any new courses? </label>
+					<textarea id="pass" name="pass" rows="2" cols="50"></textarea>
+					<span id="ques"  class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold">Are the courses enrolled by you have increased your knowledge in the subject and underlying concepts?</label>
+                        <input type="radio" name="optradio" >Yes
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio">No
+                      </label>
+					<span id="ques" class="text-danger font-weight-bold"> </span>
+				</div>
+                <div class="form-group">
+					<label class="font-weight-bold">Was the online course/courses meet your expectations in terms of quality learning?</label>
+					 <label> <input type="radio" name="optradio1" >Yes
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio1">No
+                        </label>
+					
+					<span id="ques" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold">Was our blog helpful to you?</label>
+                    <br>
+                    <input type="radio" name="optradio2" >Yes
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="optradio2">No
+                </label>
+					<span id="ques" class="text-danger font-weight-bold"> </span>
+				</div>
+
+                <div class="form-group">
+					<label class="font-weight-bold">How will you rate your experience with EDUCAPEDIA?</label>
+                    <br>
+						<label><input type="radio" name="optradio3">&#128525;
+						</label>
+                       
+                <label class="radio-inline">
+                  <input type="radio" name="optradio3">&#128516;
+                </label>
+				<label class="radio-inline">
+                  <input type="radio" name="optradio3">&#128513;
+                </label>
+				<label class="radio-inline">
+                  <input type="radio" name="optradio3"> &#128528;
+                </label>
+				<label class="radio-inline">
+                  <input type="radio" name="optradio3">&#128577;
+                </label>
+					<span id="ques" class="text-danger font-weight-bold"> </span>	
+				</div>
+				<input type="submit" name="submit" value="submit" class="btn btn-success" 	autocomplete="off">
+
+			</form><br><br>
+
+
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		function validation(){
+
+			var user = document.getElementById('user').value;
+			
+			var emails = document.getElementById('emails').value;
+
+
+			if(user == ""){
+				document.getElementById('username').innerHTML =" ** Please fill the username field";
+				return false;
+			}
+			else
+			{
+				document.getElementById('username').innerHTML ="";
+			}
+			if((user.length <= 5) || (user.length > 20)) {
+				document.getElementById('username').innerHTML =" ** Username lenght must be between 5 and 20";
+				return false;	
+			}
+			if(!isNaN(user)){
+				document.getElementById('username').innerHTML =" ** only characters are allowed";
+				return false;
+			}
+           if(emails == "")
+             {
+				document.getElementById('emailids').innerHTML =" ** Please fill the email id field";
+				return false;
+			}
+			else
+			{
+				document.getElementById('emailids').innerHTML ="";
+						}
+			if(emails.indexOf('@') <= 0 ){
+				document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+				return false;
+			}
+
+			if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+				document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+				return false;
+			}
+		}
+
+	</script>
+
+</body>
+</html>

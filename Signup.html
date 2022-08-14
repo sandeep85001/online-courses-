@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Educapedia |signUp</title>
+    
+
+  
+
+      <script>
+        
+        function redirect(){
+        window.location.href = "success.html";
+        }
+
+        function validate() {
+                var i=0;
+                if (document.form.firstname.value==null || document.form.firstname.value=="")   
+                {
+                    document.getElementById("first-name-err").innerHTML="First name cannot be blank";
+                    i++;
+                }
+                else{
+                    document.getElementById("first-name-err").innerHTML="";
+                }                
+
+                if (document.form.lastname.value==null || document.form.lastname.value=="")
+                {
+                    document.getElementById("last-name-err").innerHTML="*Last name cannot be blank";
+                    i++;
+                }
+                else{
+                    document.getElementById("last-name-err").innerHTML="";
+        
+                }
+  
+                if (isNaN(document.form.phonenumber.value)){  
+                document.getElementById("phone-number-err").innerHTML="*Enter Numeric value only";  
+                i++;
+                }
+                else{
+                document.getElementById("phone-number-err").innerHTML="";
+                }
+
+   //get result as true/false
+   var Result= ValidateEmailAddress();
+	
+	 if(!Result)
+	 {
+        document.getElementById("email-err").innerHTML="*Please Enter a Valid Email Id";
+        i++;
+   }
+   else{
+        document.getElementById("email-err").innerHTML="";
+   }
+
+
+    //Check for min. characters
+    length = document.form.password.value.length;
+    if(length<6){
+        document.getElementById("err1").innerHTML="*Password has to contain atleast 6 characters"; 
+        i++;
+    }
+    else{
+        document.getElementById("err1").innerHTML="";
+    }
+     
+    var j,count=0;count1=0,count2=0;
+    for(j=0;j<length;j++)
+    {   
+        var charCode = document.form.password.value.charCodeAt(j);
+        if((charCode>32 && charCode<48) || (charCode>57 && charCode<65) || (charCode>90 && charCode<97) || (charCode>122 && charCode<127)  ){
+            count=count+1;
+        }
+    }
+    if(count==0){
+        document.getElementById("err2").innerHTML="*Password has to contain atleast 1 Special Character";
+        i++;
+    }
+    else{
+        document.getElementById("err2").innerHTML="";
+    }
+
+    for(j=0;j<length;j++){
+        var charCode = document.form.password.value.charCodeAt(j);
+        if(charCode>64 && charCode<91)
+        {
+            count1=count1+1;
+        }
+    }
+    if(count1==0){
+        document.getElementById("err3").innerHTML="*Password has to contain atleast 1 Capital letter";
+        i++;
+    }
+    else{
+        document.getElementById("err3").innerHTML="";
+    }
+
+    for(j=0;j<length;j++){
+        var charCode = document.form.password.value.charCodeAt(j);
+        if(charCode==32)
+        {
+            count2=count2+1;
+        }
+    }
+    if(count2!=0){
+        document.getElementById("err4").innerHTML="*Password cannot contain spaces";
+        i++;
+    }
+    else{
+        document.getElementById("err4").innerHTML=""; 
+    }
+
+var firstpassword=document.form.password.value;  
+var secondpassword=document.form.repassword.value;  
+  
+if(!(firstpassword==secondpassword)){ 
+    document.getElementById("repassword-err").innerHTML="*Passwords do not match";  
+    i++;
+}  
+else{
+    document.getElementById("repassword-err").innerHTML="";
+} 
+
+if(i==0)
+{
+    //replace file name to submitted file page
+      setTimeout(redirect, 1500);
+
+}
+
+}
+
+function ValidateEmailAddress() {
+    var atSymbol = document.form.email.value.indexOf("@");
+    if(atSymbol < 1) return false;
+    
+    var dot = document.form.email.value.indexOf(".");
+    if(dot <= atSymbol + 2) return false;
+    
+    if (dot === document.form.email.value.length - 1) return false;
+    
+    return true;
+}
+      </script>
+</head>
+
+<body>
+
+  
+    
+    <form name="form" >
+        <div class="segment">
+            <h1>Sign up</h1>
+        </div>
+
+            <input type="text" id="firstname" name="firstname" placeholder="First Name*"/>
+            <div class="error" id="first-name-err"></div>
+<br>
+            <input type="text" placeholder="Middle name" name="middlename" id="middlename"/>
+            <div class="error " id="middle-name-err"></div>
+<br>    
+            <input type="text" placeholder="Last name*" id="lastname" name="lastname" />
+            <div class="error" id="last-name-err"></div>
+<br>         
+            <input type="text" placeholder="Phone number" id="phonenumber"name="phonenumber" />
+            <div class="error" id="phone-number-err"></div>
+<br>
+            <input type="text" placeholder="Email Address*" id="email" name="email"/>
+             <div class="error" id="email-err" ></div>
+<br>    
+            <input type="password" placeholder="Password*" id="password" name="password" />
+            <div class="error" id="err1"></div>
+            <div class="error" id="err2"></div>
+            <div class="error" id="err3"></div>
+            <div class="error" id="err4"></div>
+<br>
+            <input type="password" placeholder="Retype Password*" id="repassword" name="repassword"/>
+            <div class="error" id="repassword-err" ></div>
+
+<br><br>
+        <button class="red" type="button"  onClick="validate()">
+                 Sign up
+        </button>   
+        <div class="segment">
+            <a href="login.html"><button class="unit" type="button">
+                <i class="icon ion-md-arrow-back"></i>
+            </button></a>
+            
+            <button class="unit" type="button">
+                <i class="icon ion-md-bookmark"></i>
+            </button>
+            <button class="unit" type="button">
+                <i class="icon ion-md-settings"></i>
+            </button>
+        </div>
+       
+    </form>
+    </div>
+
+
+</body>
+
+</html>

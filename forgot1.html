@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Educapedia |Forgot?</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/x-icon" href="educapediahor.JPEG">
+
+    <style>
+        @import url(https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css);
+
+        body,
+        html {
+            background-color: #ebecf0;
+        }
+
+        body,
+        p,
+        input,
+        select,
+        textarea,
+        button {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.2px;
+            font-size: 16px;
+        }
+        
+        div,
+        p {
+            color: #babecc;
+            text-shadow: 1px 1px 1px #fff;
+        }
+
+        form {
+            padding-top: 8vw;
+            width: 320px;
+            margin: 0 auto;
+        }
+
+        .segment {
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        button,
+        input {
+            border: 0;
+            outline: 0;
+            font-size: 16px;
+            border-radius: 320px;
+            padding: 16px;
+          
+            background-color: whitesmoke;
+            text-shadow: 1px 1px 0 #d65bca 74%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 24px;
+            width: 100%;
+        }
+
+        input {
+            margin-right: 8px;
+            box-shadow: inset 2px 2px 5px  #d65bca 74%, inset -5px -5px 10px #fff;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        input:focus {
+ 
+            box-shadow: inset 1px 1px 2px #f9ea8f, inset -1px -1px 2px #aff1da 74%;
+        }
+
+        button {
+            color: #61677c;
+            font-weight: bold;
+            box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button:hover {
+background-color:#FDC93B;
+
+        }
+
+        button:active {
+            box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+        }
+
+        button .icon {
+            margin-right: 8px;
+        }
+
+        button.unit {
+            border-radius: 8px;
+            line-height: 0;
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 8px;
+            font-size: 19.2px;
+        }
+
+        button.unit .icon {
+            margin-right: 0;
+        }
+
+        button.red {
+            display: block;
+            width: 100%;
+            color: rgb(21,21,100);
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .input-group label {
+            margin: 0;
+            flex: 1;
+        }
+
+        span {
+            text-decoration: none;
+            font-weight: 700;
+            color:rgb(21,21,100) ;
+            margin: 10px 10px 10px 3px;   
+        }
+
+        .signup p {
+            color: rgba(0, 0, 0, 0.499);
+            margin-top: 10px;
+            font-size: small;
+        }
+
+        .signup a {
+            text-decoration: none;
+        }
+
+        .error  {
+            color:red;
+            font-size: small;
+            margin-left: 10px;
+        }
+      </style>
+      <script>
+        function validate(){
+            i=0;
+            var firstpassword=document.form.password.value;  
+            var secondpassword=document.form.repassword.value;
+            
+  
+            if(!(firstpassword==secondpassword)){ 
+            document.getElementById("repassword-err").innerHTML="*Passwords do not match";  
+             i++;
+            }  
+            else{
+             document.getElementById("repassword-err").innerHTML="";
+            } 
+            if(firstpassword==null || firstpassword=="")
+            {   document.getElementById("repassword-err").innerHTML="*Password is empty";  
+                i++;
+
+            }  
+            if(i==0){
+            window.location.href="index.html"
+            }
+            }
+      </script>
+</head>
+
+<body>
+
+     <!--Navigation-->
+    <nav>
+        <!--Add Image-->
+        <img src="educapediahor.JPEG" style="height: 40px; width : 180px " alt="logo">
+        <div class="navigation ">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a>
+                    </li>
+                    <li><a href="blog.html">Blog</a>
+                    </li>
+                    <li><a href="course.html">Courses</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a>
+                    </li>
+                    <li><a href="login.html"><button class="button">Login</button></a>
+                    </li>
+
+            </ul>
+        </div>
+    </nav>
+    
+    <form name="form">
+        <div class="segment">
+            <h1>Create New Password</h1>
+        </div>
+            <input type="text" placeholder="Enter OTP" maxlength="6" minlength="6" name="OTP" id="" style="margin:8px;"   >
+            <input type="password" placeholder="New Password" name="password" style="margin:8px;" />
+            <input type="password" placeholder="Confirm New Password" name="repassword" style="margin:8px;"/>
+            <div class="error" id="repassword-err"></div>
+
+
+        <button  class="red" type="button" onclick="validate()" style="margin:8px;">
+            Continue
+        </button>
+
+        <div class="segment">
+            <a href="forgot.html"><button class="unit" type="button">
+                <i class="icon ion-md-arrow-back"></i>
+            </button></a>
+        </div>
+       
+    </form>
+    </div>
+    
+
+
+</body>
+
+</html>

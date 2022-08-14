@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educapedia |Contact Us</title>
+     <link rel="icon" type="image/x-icon" href="educapediahor.JPEG">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/7c4f01da6d.js" crossorigin="anonymous"></script>
+    <script>
+        function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+// Defining a function to validate form 
+function validateForm() {
+    // Retrieving the values of form elements 
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+    var subject = document.contactForm.subject.value;
+    var message=document.contactForm.message.value;
+    // var gender = document.contactForm.gender.value;
+    
+	// Defining error variables with a default value
+    var nameErr = emailErr = subjectErr = countryErr = genderErr = true;
+    
+    // Validate name
+    if(name == "") {
+        printError("nameErr", "Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            printError("nameErr", "Please enter a valid name");
+        } else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    }
+    
+    // Validate email address
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    
+    // Validate subject
+    if(subject == "") {
+        printError("subjectErr", "Please enter your subject");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;
+        if(regex.test(subject) === false) {
+            printError("subjectErr", "Please enter a valid 10 digit subject");
+        } else{
+            printError("subjectErr", "");
+            subjectErr = false;
+        }
+    }
+    // Validate message
+    if(message == "") {
+        printError("messageErr", "Please enter a message");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;
+        if(regex.test(message) === false) {
+            printError("messageErr", "Please enter a valid message");
+        } else{
+            printError("messageErr", "");
+           messageErr = false;
+        }
+    }
+    
+    
+    // // Validate gender
+    // if(gender == "") {
+    //     printError("genderErr", "Please select your gender");
+    // } else {
+    //     printError("genderErr", "");
+    //     genderErr = false;
+    // }
+    
+    // Prevent the form from being submitted if there are any errors
+    if((nameErr || emailErr || subjectErr ||messageErr) == true) {
+       return false;
+    } else {
+        alert("You have successfully submitted the form");
+    }
+};
+    </script>
+    <style>
+        #contact {
+    padding: 8vw; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#contact .getin 
+{
+    width: 350px;
+}
+#contact .getin h2 
+{
+    color: #2c234d;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: .8;
+    margin-bottom: 16px;
+}
+#contact .getin p {
+    color: #686875;
+    line-height: 24px;
+    margin-bottom: 33px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e4ed;
+}
+#contact .getin h2 
+{
+    color: #2c234d;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+#contact .getin .getin-details h3{
+    margin-bottom: 10px;
+}
+#contact .getin .getin-details div 
+{
+    display: flex;
+    
+}
+#contact .getin .getin-details div i{
+    margin-top: 8px;
+}
+#contact .getin .getin-details div.get 
+{
+    font-size: 16px;
+    line-height: 22px;
+    color: #5838fc;
+    margin-right: 20px;
+}
+#contact .getin .getin-details div p {
+    font-size: 14px;
+    border-bottom: none;
+    line-height: 22px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+#contact .getin .getin-details div .prolinks i{
+    margin-right: 8px;
+}
+#contact form{
+    width: 60%;
+    background: #f7f6fa;
+    padding: 40px;
+    border-radius: 10px;
+
+}
+#contact .contactForm h2{
+    font-size: 24px;
+    color: #2c234d;
+    line-height: 30px;
+    margin-bottom: 8px;
+
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 5px
+}
+#contact label i {
+    color: #999;
+    font-size: 80%;
+}
+#contact input, select,textarea {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+#contact .row {
+    padding-bottom: 10px;
+}
+#contact .form-inline {
+    border: 1px solid #ccc;
+    padding: 8px 10px 4px;
+    border-radius: 2px;
+}
+#contact .form-inline label, .form-inline input {
+    display: inline-block;
+    width: auto;
+    padding-right: 15px;
+}
+
+#contact  .error {
+    color: red;
+    font-size: 90%;
+}
+#contact .submit{
+    font-size: .9rem;
+    padding: 13px 25px;
+    background: rgb(21, 21, 100);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+}
+
+#map{
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 8vw;
+}
+#map iframe{
+    width: 100%;
+    height: 100%;
+}
+    </style>
+</head>
+
+<body>
+   <!--Navigation-->
+   <nav>
+    <!--Add Image-->
+    <img src="educapediahor.JPEG" style="height: 40px; width : 180px " alt="logo">
+    <div class="navigation ">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a>
+                </li>
+                <li><a href="blog.html">Blog</a>
+                </li>
+                <li><a href="course.html">Courses</a>
+                </li>
+                <li><a href="contact.html">Contact</a>
+                </li>
+                <li><a href="login.html"><button class="button">Login</button></a>
+                </li>
+
+        </ul>
+    </div>
+</nav>
+    <!--home-->
+    <section id="about-home">
+        <h2>Contact us</h2>
+    </section>
+
+    <section id="contact">
+        <div class="getin">
+            <h1>Get in touch</h1>
+            <p>Looking for help? Fill the form and start a new adventure.</p>
+            <div class="getin-details">
+                <h3>Headquaters</h3>
+                <div>
+                   <i class="far fa-building"></i>
+                   <p> 744 New York Ave, Brooklyn, Kings, New York 10224</p>
+                </div>
+                <h3>Phone</h3>
+                <div>
+                    <i class="fas fa-phone-alt get"></i>
+                    <p>+91-9568358**<br>+91-7647975**</p>
+                </div>
+                <h3>Support</h3>
+                <div>
+                    <i class="fas fa-envelope-open-text get"></i>
+                    <p>*@support.com<br>help@**.com</p>
+                </div>
+                <h3>Follow us</h3>
+                <div class="pro-links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+            <form name="contactForm" onsubmit="return validateForm()" action="contact.html"method="post">
+                <h2>Contact Form</h2>
+                <br/>
+                <div class="row">
+                    <label>Full Name</label>
+                    <input type="text" name="name">
+                    <div class="error" id="nameErr"></div>
+                </div>
+                <div class="row">
+                    <label>Email Address</label>
+                    <input type="text" name="email">
+                    <div class="error" id="emailErr"></div>
+                </div>
+                <div class="row">
+                    <label>subject</label>
+                    <input type="text" name="subject" minlength="10">
+                    <div class="error" id="subjectErr"></div>
+                </div>
+                <div class="row">
+                    <label>Message</label>
+                    <textarea name="message" colspan="30" rowspan="8" minlength="20"placeholder="How can we help?"></textarea>
+                    <div class="error" id="messageErr"></div>
+                </div>
+                <!-- <div class="row">
+                    <label>Gender</label>
+                    <div class="form-inline">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label> 
+                    </div>
+                    <div class="error" id="genderErr"></div>
+                </div>        -->
+                <div class="row">
+                    <input type="submit" value="Send message" class="submit" style="height:50px; width:200px" >
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.8290323307388!2d-73.94965128459677!3d40.65569897933811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b6603962a65%3A0xee07980eea378c02!2s744%20New%20York%20Ave%2C%20Brooklyn%2C%20NY%2010224%2C%20USA!5e0!3m2!1sen!2sin!4v1651139475431!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Service</li>
+        </div>
+    
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <li>Jobs</li>
+            <li>Brand Assests</li>
+            <li>Investor Relations</li>
+            <li>Terms Of Service</li>
+        </div>
+    
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Service</li>
+        </div>
+    
+        <div class="footer-col">
+            <h3>Resources</h3>
+            <li>MGuides</li>
+            <li>Research</li>
+            <li>Experts</li>
+            <li>Marketing Service</li>
+        </div>
+    
+        <div class="footer-col">
+            <h3>News Letter</h3>
+            <p>Tou can trust us. We only send promo offers, </p>
+            <div class="subscribe">
+                <input type="text" value="Your Email address">
+                <a class="white" href="#">SUBSCRIBE</a>
+            </div>
+        </div>
+       
+        <div class="copyright"> 
+            <p>Copyright 2022 All rights reserved | This template is made at Amrita</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+    
+        </div>
+    </footer>
+</body>
+
+</html>

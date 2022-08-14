@@ -1,0 +1,524 @@
+<!--
+  Team Members
+  1.sandeep-navbar,register,countdown,profile's.
+  2.jahnavi-courses,payment.
+  3.harshita-contact page.
+  4.jaswanth-blog page,login and signup page,awesome features.
+  5.deepak-about,review.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Educapedia |Home</title>
+     <link rel="icon" type="image/x-icon" href="educapediahor.JPEG">
+    <style>
+    
+
+      
+      .new:hover{
+       background-color: #FDC93B;
+      }
+      .new{
+        border: 0;
+            outline: 0;
+            font-size: 16px;
+            border-radius: 320px;
+            padding: 16px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/7c4f01da6d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+<!--script for register form-->
+    <script>
+      function ValidateEmailAddress() {
+        // check for @ sign
+        var atSymbol = document.form.email.value.indexOf("@");
+        if (atSymbol < 1) return false;
+
+        var dot = document.form.email.value.indexOf(".");
+        if (dot <= atSymbol + 2) return false;
+
+        // check that the dot is not at the end
+        if (dot === document.form.email.value.length - 1) return false;
+
+        return true;
+      }
+      function validate() {
+        var i = 0;
+        if (
+          document.form.name.value == null ||
+          document.form.name.value == ""
+        ) {
+          document.getElementById("name-err").innerHTML =
+            "Name cannot be blank";
+          i++;
+        } else {
+          document.getElementById("name-err").innerHTML = "";
+        }
+
+        var Result = ValidateEmailAddress();
+
+        if (!Result) {
+          document.getElementById("email-err").innerHTML =
+            "*Please Enter a Valid Email Id";
+          i++;
+        } else {
+          document.getElementById("email-err").innerHTML = "";
+        }
+
+        if (isNaN(document.form.phonenumber.value)) {
+          document.getElementById("phone-number-err").innerHTML =
+            "*Enter Numeric value only";
+          i++;
+        } else {
+          document.getElementById("phone-number-err").innerHTML = "";
+        }
+        
+        if(i==0){
+          window.alert("Your form has been submitted succesfully");
+        }
+        
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--Navigation-->
+    <nav>
+      <!--Add Image-->
+      <img
+        src="educapediahor.JPEG"
+        style="height: 40px; width: 180px"
+        alt="logo"
+      />
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="course.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="login.html"><button class="button">Login</button></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--home-->
+    <section id="home">
+      <h2
+        style="
+          font-size: 3.5rem;
+          background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        "
+      >
+        Enhance Your Future With Educapedia
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+        neque suscipit aut ullam quisquam laboriosam eum nesciunt quos,
+        molestias optio tenetur nobis vel sint quis veniam molestiae nemo
+        deserunt autem!
+      </p>
+      <div class="btn">
+        <a class="blue" href="#">Learn More</a>
+        <a class="yellow" href="course.html">Visit Courses</a>
+      </div>
+    </section>
+
+    <!--features-->
+    <section id="features">
+      <h1>Awesome Features</h1>
+      <p>Replenish man have thing gathering lights yielding shall you</p>
+      <div class="fea-base">
+        <div class="fea-box">
+          <i
+            class="fas fa-graduation-cap"
+            style="font-size: 50px; padding: 20px 20px"
+          ></i>
+          <h3 style="padding: 5px 20px">Scholarship Facility</h3>
+          <p style="padding: 0px 20px 20px 20px">
+            One make creepeth, man bearing their afirmament won't great heaven.
+          </p>
+        </div>
+
+        <div class="fea-box">
+          <i
+            class="fas fa-users"
+            style="font-size: 50px; padding: 20px 20px"
+          ></i>
+          <h3 style="padding: 5px 20px">Personalized Support</h3>
+          <p style="padding: 0px 20px 20px 20px">
+            Dedicated mentors available on a hotline for your disposal whenever
+            you want.
+          </p>
+        </div>
+
+        <div class="fea-box">
+          <i
+            class="fas fa-award"
+            style="font-size: 50px; padding: 20px 20px"
+          ></i>
+          <h3 style="padding: 5px 20px">Global certification</h3>
+          <p style="padding: 0px 20px 20px 20px">
+            One make creepeth, man bearing theira firmament won't great heaven.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--Courses-->
+    <section id="course">
+      <h1>Our popular courses</h1>
+      <p>replenish man have thing gathering yeilding shall you</p>
+      <div class="course-box">
+        <div class="courses">
+          <a href="/UID FINAL/course_inner.html"
+            ><img src="JSImage.png" alt=""
+          /></a>
+          <div class="details">
+            <span>uploaded 26/4/22</span>
+            <h6>Javascript Beginners Courses</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="cost">$49.99</div>
+        </div>
+
+        <div class="courses">
+          <a href="/UID FINAL/course_inner2.html"
+            ><img
+              src="https://programadoresbrasil.com.br/wp-content/uploads/2020/02/Introduction-to-HTML-and-CSS-for-Beginners-Hafiza-Rabbia-Shafiq.jpg"
+              style="height: 180px; width: 350px"
+              alt=""
+          /></a>
+          <div class="details">
+            <span>uploaded 26/4/22</span>
+            <h6>HTML & CSS Beginners Courses</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="cost">$49.99</div>
+        </div>
+
+        <div class="courses">
+          <img
+            src="https://logos-world.net/wp-content/uploads/2021/10/Python-Symbol.png"
+            style="width: 350px"
+            alt=""
+          />
+          <div class="details">
+            <span>uploaded 26/4/22</span>
+            <h6>Python Beginners Courses</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="cost">$49.99</div>
+        </div>
+
+        <div class="courses">
+          <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6c22e6f7-c5c5-47d4-8a81-852772d7b715/dcwv3uk-d321fd49-6e33-4c37-a76d-d41888a1bb83.png/v1/fill/w_1024,h_725,strp/redesign_linux_logo_by_zonline_dcwv3uk-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzI1IiwicGF0aCI6IlwvZlwvNmMyMmU2ZjctYzVjNS00N2Q0LThhODEtODUyNzcyZDdiNzE1XC9kY3d2M3VrLWQzMjFmZDQ5LTZlMzMtNGMzNy1hNzZkLWQ0MTg4OGExYmI4My5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ii_zkhxohjM1lHBxld6hfycQo1pGY2P5yQuZDJBCAeI"
+            style="width: 300px"
+            alt=""
+          />
+          <div class="details">
+            <span>uploaded 26/4/22</span>
+            <h6>Linux Beginners Courses</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="cost">$49.99</div>
+        </div>
+
+        <div class="courses">
+          <img
+            src="https://cdn.worldvectorlogo.com/logos/c-1.svg"
+            style="width: 400px; height: 150px"
+            alt=""
+          />
+          <div class="details">
+            <span>uploaded 26/4/22</span>
+            <h6>C Programming Courses</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="cost">$49.99</div>
+        </div>
+
+        <div class="courses">
+          <img
+            src="https://repository-images.githubusercontent.com/24195339/87018c00-694b-11e9-8b5f-c34826306d36"
+            alt=""
+          />
+          <div class="details">
+            <span>uploaded 26/4/22</span>
+            <h6>Angular Beginners Courses</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(239)</span>
+            </div>
+          </div>
+          <div class="cost">$49.99</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="registration">
+      <div class="reminder">
+        <p>Get 100 Online Courses for Free</p>
+        <h1>Register To Get It</h1>
+        <div id="clockdiv">
+          <div>
+            <span class="days"></span>
+            <div class="smalltext">Days</div>
+          </div>
+          <div>
+            <span class="hours"></span>
+            <div class="smalltext">Hours</div>
+          </div>
+          <div>
+            <span class="minutes"></span>
+            <div class="smalltext">Minutes</div>
+          </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Seconds</div>
+          </div>
+        </div>
+      </div>
+      <form action="success.html" name="form">
+      <div class="form" name="form">
+        <h3>Create Free Account NOW!</h3>
+        <input type="text" placeholder="Name" name="name" id="" />
+        <div class="error" id="name-err"></div>
+        <input type="text" placeholder="Email Address" name="email" id="" />
+        <div class="error" id="email-err"></div>
+        <input
+          type="text"
+          placeholder="Phone Number"
+          name="phonenumber"
+          id=""
+          maxlength="10" minlength="10"
+        />
+        <div class="error" id="phone-number-err" ></div>
+        <div class="btn">
+         <button  class="new" type="button" onclick="validate()" >Submit form
+          </button>
+        </div>
+      </div>
+      </form>
+      <script>
+        var deadline = "JUL 01 2022 18:40:18 GMT-0400";
+        function time_remaining(endtime) {
+          var t = Date.parse(endtime) - Date.parse(new Date());
+          var seconds = Math.floor((t / 1000) % 60);
+          var minutes = Math.floor((t / 1000 / 60) % 60);
+          var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+          var days = Math.floor(t / (1000 * 60 * 60 * 24));
+          return {
+            total: t,
+            days: days,
+            hours: hours,
+            minutes: minutes,
+            seconds: seconds,
+          };
+        }
+        function run_clock(id, endtime) {
+          var clock = document.getElementById(id);
+
+          // get spans where our clock numbers are held
+          var days_span = clock.querySelector(".days");
+          var hours_span = clock.querySelector(".hours");
+          var minutes_span = clock.querySelector(".minutes");
+          var seconds_span = clock.querySelector(".seconds");
+          // returns the first Element within the document that matches the specified selector, 
+         // or group of selectors. If no matches are found, null is returned.
+
+          function update_clock() {
+            var t = time_remaining(endtime);
+
+            // update the numbers in each part of the clock
+            days_span.innerHTML = t.days;
+            hours_span.innerHTML = ("0" + t.hours).slice(-2);
+            minutes_span.innerHTML = ("0" + t.minutes).slice(-2);
+            seconds_span.innerHTML = ("0" + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+              clearInterval(timeinterval);
+            }
+            
+          }
+          update_clock();
+          var timeinterval = setInterval(update_clock, 1000);
+        }
+        run_clock("clockdiv", deadline);
+      </script>
+    </section>
+
+    <!-- Profiles-->
+    <selection id="experts">
+      <h1>Community Experts</h1>
+      <p>Replenish man have thing gathering lights yielding shall you</p>
+      <div class="expert-box">
+        <div class="profile">
+          <img
+            src="https://cdn.powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-3.png"
+            alt="Expert 1"
+          />
+          <h6>Ema Irnik</h6>
+          <p>Python & Algorithm Expert</p>
+
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+        <div class="profile">
+          <img
+            src="https://cdn.powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png"
+            alt="Expert 2"
+          />
+          <h6>Jason</h6>
+          <p>Data Analysis Expert</p>
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+
+        <div class="profile">
+          <img
+            src="https://cdn.powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-2-e1510727045494.png"
+            alt="Expert 3"
+          />
+          <h6>Maalik</h6>
+          <p>Full Stack Developer</p>
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+
+        <div class="profile">
+          <img src="pro-4.jpeg" alt="Expert 4" />
+          <h6>Jenny</h6>
+          <p>Design Expert</p>
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+      </div>
+    </selection>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-col">
+        <h3>Top Products</h3>
+        <li>Manage Reputation</li>
+        <li>Power Tools</li>
+        <li>Managed Website</li>
+        <li>Marketing Service</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <li>Jobs</li>
+        <li>Brand Assests</li>
+        <li>Investor Relations</li>
+        <li>Terms Of Service</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Features</h3>
+        <li>Manage Reputation</li>
+        <li>Power Tools</li>
+        <li>Managed Website</li>
+        <li>Marketing Service</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <li>MGuides</li>
+        <li>Research</li>
+        <li>Experts</li>
+        <li>Marketing Service</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>News Letter</h3>
+        <p>Tou can trust us. We only send promo offers,</p>
+        <div class="subscribe">
+          <input type="text" value="Your Email address" />
+          <a class="white" href="#">SUBSCRIBE</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          Copyright 2022 All rights reserved | This template is made at Amrita
+        </p>
+        <div class="pro-links">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

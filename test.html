@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .errr{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="javascript:void(0);" id="myform" class="myform" name="myform" onsubmit="validate()">
+        <label for="name">Name*:</label>
+        <input type="text" name="name" id="name">
+        <p name="err" class="errr" id="err"></p>
+
+
+        <label for="adress">Adress:</label>
+        <input type="text" name="adress" id="adress">
+        <p name="Please Enter Address" class="errr" id="Please Enter Address"></p>
+        
+        
+        <label for="zip">Zip Code*:</label>
+        <input type="text" name="zip" id="zip">
+        <p name="err_2" class="errr" id="err_2"></p>
+
+        <label for="country" >Country*</label>
+        <select name="country" id="country">
+            <option value="india">india</option>
+            <option value="america">america</option>
+            <option value="china">china</option>
+        </select>
+        <p name="err" class="errr" id="err"></p>
+        
+        <label for="rad">Gender*:</label>
+        <input type="radio" name="rad" id="rad" value="male">female
+        <input type="radio" name="rad" id="rad" value="female">female
+        <p name="err" class="errr" id="err"></p>
+        
+        <label for="chk">preferances*:</label>
+        <input type="checkbox" name="chk" id="chk" value="red">red
+        <input type="checkbox" name="chk" id="chk" value="green">green
+        <input type="checkbox" name="chk" id="chk" value="blue">blue
+        <p name="err" class="errr" id="err"></p>
+
+        <label for="phone">Phone*:</label>
+        <input type="text" name="phone" id="phone">
+        <p name="err" class="errr" id="err"></p>
+
+        <label for="email">Email*:</label>
+        <input type="text" name="email" id="email">
+        <p name="err" class="errr" id="err"></p>
+
+        <label for="pass">Password*(6-8 characters):</label>
+        <input type="password" name="pass" id="pass">
+        <p name="err" class="errr" id="err"></p>
+
+        <label for="ver">Verify Password:</label>
+        <input type="password" id="ver" name="ver">
+        <p name="err" class="errr" id="err"></p>
+
+        <input type="submit" value="send">
+        <input type="reset" value="clear">
+    </form>
+</body>
+<script>
+    var i=0;
+    function validate(){
+        if((document.myform.name.value=="")||!isNaN(document.myform.name.value)){
+            document.getElementById("err").innerHTML="err";
+            i++;
+        }
+        if(document.myform.adress.value==""){
+            document.getElementById("Please Enter Address").innerHTML="err1";
+            i++;
+        }
+        if(dcument.myform.zip.value==""){
+            document.getElementById("err_2").innerHTML="err2";
+            alert("error 3");
+            i++;
+        }
+
+    }
+</script>
+</html>
